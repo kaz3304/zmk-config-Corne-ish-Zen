@@ -36,7 +36,6 @@
                     &kp        &trans    &kp                &kp KP_N0 &mo 3     &kp KP_DOT
                         >;
                 };
-
                 nav_layer {
                         label = "Nav/Sym";
                         bindings = <
@@ -46,7 +45,6 @@
                             &trans    &mo 3 &trans    &kp      &trans    &kp
                         >;
                 };
-
                 power_layer {
                         label = "hax";
 
