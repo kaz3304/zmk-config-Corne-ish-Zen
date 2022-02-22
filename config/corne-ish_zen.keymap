@@ -3,6 +3,12 @@
 * Copyright (c) 2021 Darryl deHaan
 * SPDX-License-Identifier: MIT
 *
+* clean slate
+   &kp &kp &kp &kp &kp &kp      &kp &kp &kp &kp &kp &kp
+   &kp &kp &kp &kp &kp &kp      &kp &kp &kp &kp &kp &kp
+   &kp &kp &kp &kp &kp &kp      &kp &kp &kp &kp &kp &kp
+               &kp &kp &kp      &kp &kp &kp
+*
 */
 
 #include <behaviors.dtsi>
@@ -14,47 +20,49 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-                        label = "QWERTY";
+                        label = "Talk";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+// | ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | BKSP |
+// | TAB |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '   |
+// | CTR |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | ESC  |
+//                   | ALT | LWR | SHF |   | SPC | RSE | GUI |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+   &kp ESC   &kp Q &kp W &kp E &kp R &kp T       &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &kp TAB   &kp A &kp S &kp D &kp F &kp G       &kp H &kp J  &kp K     &kp L   &kp SQT  &kp RET
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B       &kp N &kp M  &kp COMMA &kp DOT &kp SEMI &kp FSLH
+                      &kp RALT &mo 1 &kp LSHFT   &kp SPACE &mo 2 &kp RGUI
                         >;
                 };
                 lower_layer {
-                        label = "NUMBER";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+                        label = "Calc";
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &trans &trans &kp LPAR &kp RPAR   &kp AMPS  &kp STAR     &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp MINUS   &trans &kp DEL
+   &trans &trans &kp      &kp CARET  &kp PRCNT &kp DLLR     &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS &trans &trans
+   &trans &trans &kp      &kp HASH   &kp AT    &kp EXCL     &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp EQUAL   &trans &trans
+                    &kp        &trans    &kp                &kp KP_N0 &mo 3     &kp KP_DOT
                         >;
                 };
 
                 raise_layer {
-                        label = "SYMBOL";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+                        label = "Nav/Sym";
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &trans &trans   &kp UP   &kp       &kp   &kp       &kp C_RW &kp C_PP  &kp C_FF &kp LBKT &kp RBKT  &trans
+   &trans &kp LEFT &kp DOWN &kp RIGHT &kp   &kp       &kp      &kp PG_UP &kp      &kp      &kp GRAVE &trans
+   &trans &trans   &kp      &kp       &kp   &kp       &kp HOME &kp PG_DN &kp END  &kp      &kp       &kp BSLH
+                            &trans    &mo 3 &trans    &kp      &trans    &kp
                         >;
                 };
+
+                power_layer {
+                        label = "hax";
+
+                        bindings = <
+   &trans &trans &trans &trans &trans &bt BT_NXT   &kp F9 &kp F10 &kp F11 &kp F12 &trans &trans
+   &trans &trans &trans &bt BT_CLR &trans &trans   &kp F5 &kp F6  &kp F7  &kp F8  &trans &trans
+   &trans &trans &trans &trans &trans &bt BT_PRV   &kp F1 &kp F2  &kp F3  &kp F4  &trans &trans 
+                        &trans &trans &trans   &trans &trans &trans 
+                        >;
+                };
+
         };
 };
