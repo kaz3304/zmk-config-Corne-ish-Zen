@@ -3,12 +3,6 @@
 * Copyright (c) 2021 Darryl deHaan
 * SPDX-License-Identifier: MIT
 *
-* clean slate
-   &kp &kp &kp &kp &kp &kp      &kp &kp &kp &kp &kp &kp
-   &kp &kp &kp &kp &kp &kp      &kp &kp &kp &kp &kp &kp
-   &kp &kp &kp &kp &kp &kp      &kp &kp &kp &kp &kp &kp
-               &kp &kp &kp      &kp &kp &kp
-*
 */
 
 #include <behaviors.dtsi>
@@ -33,7 +27,7 @@
                       &kp RALT &mo 1 &kp LSHFT   &kp SPACE &mo 2 &kp RGUI
                         >;
                 };
-                lower_layer {
+                number_layer {
                         label = "Calc";
                         bindings = <
    &trans &trans &kp LPAR &kp RPAR   &kp AMPS  &kp STAR     &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp MINUS   &trans &kp DEL
@@ -43,7 +37,7 @@
                         >;
                 };
 
-                raise_layer {
+                nav_layer {
                         label = "Nav/Sym";
                         bindings = <
    &trans &trans   &kp UP   &kp       &kp   &kp       &kp C_RW &kp C_PP  &kp C_FF &kp LBKT &kp RBKT  &trans
